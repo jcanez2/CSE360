@@ -10,8 +10,7 @@ package cse360assign2;
 import java.lang.String;
 
 /**
- * @name AddingMachine
- * Class contains a constructor and various
+ * The AddingMachine  Class contains a constructor and various
  * methods that perform various mathematical
  * calculations in addition there is a clear method  
  *
@@ -19,6 +18,7 @@ import java.lang.String;
 
 public class AddingMachine {
 	private int	total;
+	private String computations = "0";
 	
 	/**
 	 * constructor sets the initial value of the local 
@@ -39,31 +39,33 @@ public class AddingMachine {
 	
 	public int getTotal ()
 	{
-		return 0;
+		return total;
 	}
 	
 	/**
 	 * the add method takes in a value and adds it to
 	 * the current value of total
 	 * 
-	 * @param value an int to be added to total
+	 * @param value an integer to be added to total
 	 */
 	
 	public void add (int value)
 	{
-		
+		total = total + value;
+		computations = computations + " + " + Integer.toString(value);
 	}
 	
 	/**
 	 * the subtract method takes in a value and subtracts
 	 * it from the local total variable 
 	 * 
-	 * @param value   an int to be subtracted from total
+	 * @param value   an integer to be subtracted from total
 	 */
 	
 	public void subtract (int value)
 	{
-		
+		total = total - value;
+		computations = computations + " - " + Integer.toString(value);
 	}
 	
 	/**
@@ -76,16 +78,18 @@ public class AddingMachine {
 	
 	public String toString ()
 	{
-		return "";
+		return computations;
 	}
 	
 	/**
-	 * the clear method clears
+	 * the clear method resets the 
+	 * computations String and set the 
+	 * total value back to zero
 	 */
 	
 	public void clear ()
 	{
-		
+		total = 0;
+		computations = "0";
 	}
-	
 }
