@@ -4,7 +4,7 @@
  *  assignment2
  */
 
-package cse360assign2;
+package cse360assign3;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -128,4 +128,138 @@ class TestAddingMachine {
 		assertEquals("0", testZero);
 		
 	}
+	
+	
+/**
+ * This method test to see that after you perform 
+ * a number of mathematical calculations and then does mult
+ * to test the mult method 
+ */
+	
+	@Test
+	void testmultmethod() {
+	
+		Calculator myCalculator = new Calculator();
+		
+		myCalculator.add(4);
+		myCalculator.subtract(2);
+		myCalculator.add(5);
+		myCalculator.mult(8);
+		
+		String testZero = myCalculator.toString();
+		
+		assertEquals("0 + 4 - 2 + 5 * 8", testZero);
+		
+		int testTotal = myCalculator.getTotal();
+		
+		assertEquals(56,testTotal);
+	}
+	
+/**
+ * This method test to see that after you perform 
+ * a number of mathematical calculations and performs
+ * the div method and checks for correct output 
+ */
+	
+	@Test
+	void testdivMethod() {
+	
+		Calculator myCalculator = new Calculator();
+		
+		myCalculator.add(4);
+		myCalculator.subtract(2);
+		myCalculator.add(6);
+		myCalculator.div(8);
+		
+		String testZero = myCalculator.toString();
+		
+		assertEquals("0 + 4 - 2 + 6 / 8", testZero);
+		
+		int testTotal = myCalculator.getTotal();
+		
+		assertEquals(1,testTotal);
+	}
+
+/**
+ * This method test to see that after you perform 
+ * a number of mathematical calculations and then does the
+ * power method and checks for correct output 
+ */
+	
+	@Test
+	void testpowerMethod() {
+		Calculator myCalculator = new Calculator();
+
+		myCalculator.add(4);
+
+		myCalculator.subtract(2);
+
+		myCalculator.add(6);
+
+		myCalculator.power(2);
+		
+		String testZero = myCalculator.toString();
+		
+		assertEquals("0 + 4 - 2 + 6 ^ 2", testZero);
+		
+		int testTotal = myCalculator.getTotal();
+		
+		assertEquals(64,testTotal);
+	}
+		
+/**
+ * This method test to see that after you perform 
+ * a number of mathematical calculations and then does the
+ * div method with 0 as the value and checks for correct output 
+ */
+	
+	@Test
+	void testdivZero() {
+		Calculator myCalculator = new Calculator();
+
+		myCalculator.add(4);
+
+		myCalculator.subtract(2);
+
+		myCalculator.add(6);
+
+		myCalculator.div(0);
+		
+		String testZero = myCalculator.toString();
+		
+		assertEquals("0 + 4 - 2 + 6 / 0", testZero);
+		
+		int testTotal = myCalculator.getTotal();
+		
+		assertEquals(0,testTotal);
+	}
+
+/**
+ * This method test to see that after you perform 
+ * a number of mathematical calculations and then does the
+ * power method with a negative value and checks for correct output 
+ */
+	
+	@Test
+	void testPowerNeg() {
+		Calculator myCalculator = new Calculator();
+
+		myCalculator.add(4);
+
+		myCalculator.subtract(2);
+
+		myCalculator.add(6);
+
+		myCalculator.power(-2);
+		
+		String testNeg = myCalculator.toString();
+		
+		assertEquals("0 + 4 - 2 + 6 ^ -2", testNeg);
+		
+		int testTotal = myCalculator.getTotal();
+		
+		assertEquals(0,testTotal);
+	}
+
+	
 }

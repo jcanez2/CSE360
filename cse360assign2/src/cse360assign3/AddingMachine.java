@@ -4,7 +4,7 @@
  *  assignment2
  */ 
 
-package cse360assign2;
+package cse360assign3;
 
 
 import java.lang.String;
@@ -17,8 +17,8 @@ import java.lang.String;
  */
 
 public class AddingMachine {
-	private int	total;
-	private String computations = "0";
+	protected int	total;
+	protected String computations = "0";
 	
 	/**
 	 * constructor sets the initial value of the local 
